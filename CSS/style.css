@@ -1,0 +1,124 @@
+@import 'reset.css';
+
+@font-face {
+    font-family: 'ArialCustom';
+    src: url('../fonts/arialmt.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ArialCustom';
+    src: url('../fonts/arial_bolditalicmt.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 14px 39px;
+    color: black;
+}
+
+.nav-logo img {
+    height: 67px;
+}
+
+.nav-items {
+    padding-left: 165px;
+    display: flex;
+    gap: 82px;
+}
+
+.navs {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none; /* убираем подчеркивание */
+    color: inherit;        /* цвет текста наследуется */
+    cursor: pointer;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+
+main{
+    background-color: #F3F2F2;
+}
+
+.container{
+    margin-left: 158px;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 150px;
+    background: linear-gradient(90deg, #020039, #362FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* для Firefox */
+    background-clip: text;
+    color: transparent;
+}
+
+.start-bth{
+    margin-top: 65px;
+    width: 526px;
+    height: 108px;
+}
+
+.bth{
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    font-size: 35px;
+    font-weight: 600;
+    color: white;
+    padding: 33px 98px;
+    background: linear-gradient(90deg, #020039, #362FFF);
+    border-radius: 50px;
+}
+
+.soc-seti{
+    padding-top: 60px;
+    color: white;
+}
+
+.seti{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 526px;
+    height: 122px;
+    padding: 25px 25px;
+    background: #DB4500;
+    border-radius: 20px;
+
+}
+.bt{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+
+.navs:hover{
+    background: linear-gradient(90deg, #020039, #362FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* для Firefox */
+    background-clip: text;
+    color: transparent;
+
+    
+}
+
+
