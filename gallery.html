@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.png" alt="logo">
+        </div>
+       <div class="nav-items">
+            <a class="navs" href="index.html">Главная</a>
+            <a class="navs" href="about.html">О колледже</a>
+            <a class="navs" href="specialties.html">Специальности</a>
+            <a class="navs" href="gallery.html">Галерея</a>
+            <a class="navs" href="contacts.html">Контакты</a>
+        </div>
+    </nav>
+    <section class="gallery" >
+          <!-- Фильтры -->
+   <div class="gallery-filters">
+    <button class="filter-btn active" data-category="all">Все</button>
+    <button class="filter-btn" data-category="учеба">Учёба</button>
+    <button class="filter-btn" data-category="хакатон">Хакатон</button>
+    <button class="filter-btn" data-category="мероприятие">Мероприятие</button>
+</div>
+
+<div class="gallery-grid">
+    <div class="gallery-item" data-category="учеба">
+        <img src="assets/image1.jpg" alt="Описание изображения 1">
+    </div>
+    <div class="gallery-item" data-category="хакатон">
+        <img src="assets/image2.jpg" alt="Описание изображения 2">
+    </div>
+    <div class="gallery-item" data-category="мероприятие">
+        <img src="assets/image3.jpg" alt="Описание изображения 3">
+    </div>
+    <!-- Добавь больше изображений с соответствующими категориями -->
+</div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="JS/script.js"></script>
+</body>
+</html>
