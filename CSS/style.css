@@ -164,6 +164,7 @@ h2{
 }
 
 .contact-card__title {
+    height: 80px;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 25px;
