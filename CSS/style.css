@@ -26,7 +26,7 @@ nav {
 }
 
 .nav-logo img {
-    height: 67px;
+    height: 67px
 }
 
 .nav-items {
@@ -148,7 +148,13 @@ h2{
     margin-bottom: 40px;
 }
 
+.contact-block{
+    display: flex;
+    gap: 20px;
+}
+
 .contact-card {
+    
     max-width: 520px;
     padding: 30px;
     border-radius: 20px;
@@ -264,6 +270,64 @@ h2{
 .gallery-item:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+@media (max-width: 768px) {
+    nav{
+        height: 67px;
+        padding: 0px 0px;
+    }
+    .nav-items{
+
+        padding-left: 10px;
+        gap: 20px;
+    }
+
+    .nav-logo{
+        display: none;
+    }
+
+    .navs{
+        font-size: 10px;
+    }
+    .container{
+        margin-left: 20px;
+    }
+    h1{
+        font-size: 70px;
+        line-height: 80px;
+    }
+
+    .start-bth{
+        width: 100%;
+    }
+    .soc-seti{
+        padding-top: 80px;
+    }
+
+    .bth{
+        font-size: 25px;
+        padding: 20px 70px;
+    }
+    .soc-seti{
+        padding-top: 10px;
+    }
+    .seti{
+    width: 325px;
+    padding: 10px 10px;
+    background: #DB4500;
+    border-radius: 20px;
+    gap: 10px;
+
+    }
+    .bt{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    }
 }
 
 
