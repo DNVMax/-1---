@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener('click', () => {
             // Удаляем класс active у всех кнопок и добавляем его к выбранной
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            
+            button.classList.add('active');
 
             const category = button.getAttribute('data-category');
 

@@ -21,12 +21,57 @@
 nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 14px 39px;
     color: black;
+    position: relative;
+    z-index: 100;
 }
 
 .nav-logo img {
     height: 67px
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    display: block;
 }
 
 .nav-items {
@@ -48,6 +93,8 @@ nav {
 
 main{
     background-color: #F3F2F2;
+    background-size: cover;
+    height: 100vh;
 }
 
 .container{
@@ -55,6 +102,22 @@ main{
 }
 
 .main-title {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 50px;
+    font-size: 130px;
+    font-weight: 700;
+    line-height: 130px;
+    background: linear-gradient(90deg, #020039, #362FFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* для Firefox */
+    background-clip: text;
+    color: transparent;
+}
+
+.main-title2{
+    display: none;
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 50px;
     font-size: 130px;
@@ -112,7 +175,9 @@ h2{
     width: 526px;
     height: 122px;
     padding: 25px 25px;
-    background: #DB4500;
+    background: linear-gradient(135deg, #DB4500, #FF5A2F);
+    box-shadow: 0 8px 20px rgba(219, 69, 0, 0.35);
+    transition: all 0.25s ease;
     border-radius: 20px;
 
 }
@@ -278,33 +343,101 @@ h2{
 
 
 @media (max-width: 768px) {
-    nav{
-        height: 67px;
-        padding: 0px 0px;
-    }
-    .nav-items{
-
-        padding-left: 25px;
-        gap: 20px;
+    nav {
+        padding: 14px 20px;
     }
 
-    .nav-logo{
+    .nav-logo img {
+        height: 50px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-overlay {
         display: none;
     }
 
-    .navs{
-        font-size: 10px;
+    .nav-overlay.active {
+        display: block;
     }
+
+    .nav-items {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        bottom: 0;
+        width: 280px;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 0;
+        overflow-y: auto;
+        transition: right 0.3s ease;
+        z-index: 999;
+        box-shadow: -4px 0 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-items.active {
+        right: 0;
+    }
+
+    .navs {
+        display: block;
+        padding: 18px 25px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 18px;
+        color: black;
+    }
+
+    .navs:hover {
+        background-color: #f5f5f5;
+        background: none;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+        background-clip: unset;
+        color: #020039;
+    }
+
+    .navs:last-child {
+        border-bottom: none;
+    }
+
     .container{
         margin-left: 20px;
     }
-    h1{
-        font-size: 70px;
-        line-height: 80px;
+
+    .main-title{
+        display: none;
+    }
+    .main-title2{
+        display: block;
+        font-size: 32px;
+        line-height: 30px;
+        font-weight: 600;
+        text-align: center;
+        justify-content: center;
+        margin-right: 25px;
+        font-weight: 50;
+    }
+
+    h2{
+        display: none;
+    }
+
+    .line1 {
+        display: inline;
+    }
+     .line2 {
+        display: block;
+        text-align: center;
     }
 
     .start-bth{
         width: 100%;
+        margin-left: 25px
     }
     .soc-seti{
         padding-top: 80px;
@@ -316,19 +449,20 @@ h2{
     }
     .soc-seti{
         padding-top: 10px;
+        padding-left: 30px;
     }
     .seti{
-    width: 325px;
-    padding: 10px 10px;
-    background: #DB4500;
-    border-radius: 20px;
-    gap: 10px;
+        width: 325px;
+        padding: 10px 10px;
+        background: #DB4500;
+        border-radius: 20px;
+        gap: 10px;
 
     }
     .bt{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
     }
     .contacts-title{
         line-height: 40px;
@@ -349,8 +483,29 @@ h2{
         padding: 30px 30px;
     }
     
-    
-    
+    .gallery {
+        padding: 20px 15px;
+    }
+
+    .gallery-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .gallery-filters {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
 }
     
 
